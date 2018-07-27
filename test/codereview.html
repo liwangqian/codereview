@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>iSource Workspace</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+    <!-- <link rel="stylesheet" href="./css/bootstrap-combined.min.css"> -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/select2.min.css">
+    <link rel="stylesheet" href="./css/select2-bootstrap.min.css">
+    <link rel="stylesheet" href="./css/simplemde.min.css">
+
+    <!-- javascript -->
+    <script src="./js/jquery.slim.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/select2.full.min.js"></script>
+    <script src="./js/simplemde.min.js"></script>
+    <script src="./js/highlight.mim.js"></script>
+    <script src="./js/highlightjs-line-numbers.min.js"></script>
+
+    <!-- highlightjs languages pack -->
+    <script src="./js/languages/cpp.js"></script>
+    <script src="./js/languages/lua.js"></script>
+    <script src="./js/languages/javascript.js"></script>
+    <script src="./js/languages/shell.js"></script>
+    <script src="./js/languages/python.js"></script>
+
+    <!--  -->
+    <script src="./js/index.js"></script>
+    <script src="./js/gen-issue-item.js"></script>
+
+    <style>
+        body {
+            background-color: rgb(94, 100, 102)
+        }
+
+        .img-circle {
+            -webkit-border-radius: 500px;
+            -moz-border-radius: 500px;
+            border-radius: 500px;
+        }
+
+        .img-lg-size {
+            width: 100px;
+            height: 100px;
+        }
+
+        .col-mr-10px {
+            margin-right: 10px;
+        }
+
+        .row-mb-8px {
+            margin-bottom: 8px;
+        }
+
+        .toolbar {
+            margin: 10px;
+        }
+
+        a {
+            margin-right: 10px;
+        }
+
+        .CodeMirror,
+        .CodeMirror-scroll {
+            min-height: 180px;
+        }
+
+        .list-group-item:last-child {
+            border-bottom: none;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .code-block {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container-fluid isource-workspace" style="margin-top: 20px;">
+        <div class="workspace-content">
+            <!-- header -->
+            <div class="workspace-header" style="background-color: rgb(94, 100, 102);">
+                <div class="row-fluid border-bottom">
+                    <div class="col-fluid col-mr-10px">
+                        <div class="avatar-container pull-left">
+                            <a href="#" name="isource-author-avatar">
+                                <img src="./img/a.jpg" alt="author" class="rounded-circle img-lg-size col-mr-10px">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-fluid col-mr-2">
+                        <div class="row-fluid">
+                            <h4>Liwangqian</h4>
+                            <div class="col-fluid row-mb-8px" name="isource-contrib-view">
+                                <span class="badge badge-info">
+                                    Level
+                                    <span class="badge badge-info">2</span>
+                                </span>
+                                <span class="badge badge-info">
+                                    Coins
+                                    <span class="badge badge-info">6000</span>
+                                </span>
+                            </div>
+                            <div class="col-fluid row-mb-8px" name="isource-issue-static-view">
+                                <a href="#" class="badge badge-info">
+                                    All
+                                    <span class="badge badge-info">999</span>
+                                </a>
+                                <a href="#" class="badge badge-info">
+                                    Open
+                                    <span class="badge badge-info">129</span>
+                                </a>
+                                <span class="badge badge-info">
+                                    Week
+                                    <span class="badge badge-info">50</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="toolbar" name="isource-action-toolbar">
+                        <a href="#" id="btn-new-issue">
+                            <span class="fas fa-plus fa-lg" title="New issue"></span>
+                        </a>
+                        <a href="#" id="btn-sync-isource">
+                            <span class="fas fa-sync fa-lg" title="Sync from isource"></span>
+                        </a>
+                        <span class="pull-right text-sm">
+                            <em>上一次同步的时间</em>
+                            <em name="last-sync-time">23:18:01</em>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- responsive editors -->
+            <div class="editors row-fluid">
+                <div class="isource-issue-editor-view border hide" style="background-color:white;">
+                    <!-- <label for="#issue-editor" class="ml-2 mt-4 mb-4">
+                        <h3>Create new issue</h3>
+                    </label> -->
+                    <textarea name="issue-editor" id="issue-editor"></textarea>
+                    <div class="row-fluid btn-toolbar mb-2 mt-1" role="toolbar" name="issue-editor-toolbar">
+                        <div class="mr-2 mb-1" style="width: 49%">
+                            <select class="assignee-selector" style="width: 100%"></select>
+                        </div>
+                        <div class="mb-1" style="width: 49%">
+                            <select class="project-selector" style="width: 100%"></select>
+                        </div>
+                        <select class="label-selector" multiple="multiple" style="width: 100%"></select>
+                    </div>
+                    <div class="btn-toolbar mb-2" role="toolbar" aria-label="Toolbar with button groups">
+                        <button type="button" class="btn btn-info mr-2" id="btn-submit-issue">Submit</button>
+                        <button type="button" class="btn btn-info" id="btn-cancel-issue">Cancel</button>
+                    </div>
+                </div>
+                <div class="isource-comment-editor-view border hide" style="background-color:white;">
+                    <textarea name="comment-editor" id="comment-editor"></textarea>
+                    <div class="btn-toolbar mt-2 mb-2" role="toolbar" aria-label="Toolbar with button groups">
+                        <button type="button" class="btn btn-info mr-2" id="btn-submit-comment">Submit</button>
+                        <button type="button" class="btn btn-info" id="btn-cancel-comment">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- issue list -->
+            <section class="issue-list-view">
+                <div class="list-group issue-list">
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- scripts -->
+    <script>
+        initAuthor();
+        initEditors();
+
+        // $('#btn-cancel-comment').on('click', onCancelComment);
+        // $('#btn-submit-comment').on('click', onSubmitComment);
+        // $('.toggle-code-context-view').on('click', onCodeContextViewToggle);
+        // $('.btn-comment-reply').on('click', onReplyComment);
+        // $('.btn-comment-toggle').on('click', onCommentListToggle);
+        // $('.btn-comment-edit').on('click', onCommentEdit);
+
+    </script>
+</body>
+
+</html>

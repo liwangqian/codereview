@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Review</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://www.bootcss.com/p/layoutit/css/bootstrap-combined.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+</head>
+
+<body>
+    <div class="issue-list container-fluid">
+        <div class="card">
+            <div class="card-body">
+                <div class="row-fluid" style="margin-bottom: 12px">
+                    <div class="col-fluid">
+                        <span>
+                            <div class="avatar-container" style="float: left;">
+                                <a href="#">
+                                    <img src="./img/a.jpg" alt="120x120" class="img-circle">
+                                </a>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="col-fluid">
+                        <span class="row-fluid">
+                            <span>
+                                <h4>Liwangqian</h2>
+                            </span>
+                            <span>
+                                <i>comment at 12:10:00</i>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <p>Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.</p>
+                    <p>Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod.
+                        Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis
+                        mauris, erat condimentum.
+                    </p>
+                </div>
+
+                <p>
+                    <a id="hideContext" href="#" onclick="$(this).closest('codeContext').hide()">hide context</a>
+                    <a id="showContext" href="#" onclick="$(this).closest('codeContext').show()">show context</a>
+                </p>
+                <div class="row-fluid" id="codeContext">
+                    <pre><code>local x = 1
+                    </code></pre>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row-fluid">
+                    <div class="comment-tools">
+                        <a href="#">
+                            <span class="fas fa-reply" title="Reply"></span>
+                        </a>
+                        <a href="#">
+                            <span class="fas fa-comments" title="Comments">3</span>
+                        </a>
+                        <a href="#">
+                            <span class="icon fas fa-edit" title="Edit"></span>
+                        </a>
+                        <a href="#" style="float: right;">
+                            <span class="icon fas fa-trash" title="Delete"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <div class="row-fluid" style="margin-bottom: 12px">
+                    <div class="col-fluid">
+                        <span>
+                            <div class="avatar-container" style="float: left;">
+                                <a href="#">
+                                    <img src="./img/a.jpg" alt="120x120" class="img-circle">
+                                </a>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="col-fluid">
+                        <span class="row-fluid">
+                            <span>
+                                <h4>Liwangqian</h2>
+                            </span>
+                            <span>
+                                <i>comment at 12:00:00</i>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="row-fluid" name="comment-container" id="comment-container">
+                    <p>Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.</p>
+                    <p>Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim euismod.
+                        Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis sapien quis
+                        mauris, erat condimentum.
+                    </p>
+                </div>
+
+                <p>
+                    <a id="hideContext" href="#" onclick="$(codeContext).hide()">hide context</a>
+                    <a id="showContext" href="#" onclick="$(codeContext).show()">show context</a>
+                </p>
+                <div class="row-fluid" id="codeContext">
+                    <code>
+                                    local x = 1
+                                    y = x + 1
+                                </code>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row-fluid">
+                    <div class="comment-tools">
+                        <a href="#">
+                            <span class="fas fa-reply" title="Reply"></span>
+                        </a>
+                        <a href="#">
+                            <span class="fas fa-comments" title="Comments">3</span>
+                        </a>
+                        <a href="#">
+                            <span class="icon fas fa-edit" title="Edit"></span>
+                        </a>
+                        <a href="#" style="float: right;">
+                            <span class="icon fas fa-trash" title="Delete"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="coment-list">
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <div class="row-fluid" style="margin-bottom: 12px">
+                            <div class="col-fluid">
+                                <span>
+                                    <div class="avatar-container" style="float: left;">
+                                        <a href="#">
+                                            <img src="./img/a.jpg" alt="120x120" class="img-circle">
+                                        </a>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="col-fluid">
+                                <span class="row-fluid">
+                                    <span>
+                                        <h4>Liwangqian</h2>
+                                    </span>
+                                    <span>
+                                        <i>comment at 12:00:00</i>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <p>Quisque gravida aliquam diam at cursus, quisque laoreet ac lectus a rhoncusac tempus odio.</p>
+                            <p>Aliquam posuere volutpat turpis, ut euimod diam pellentesque at. Sed sit amet nulla a dui dignisim
+                                euismod. Morbi luctus elementum dictum. Donec convallis mattis elit id varius. Quisque facilisis
+                                sapien quis mauris, erat condimentum.
+                            </p>
+                        </div>
+
+                        <p>
+                            <a id="hideContext" href="#" onclick="$(codeContext).hide()">hide context</a>
+                            <a id="showContext" href="#" onclick="$(codeContext).show()">show context</a>
+                        </p>
+                        <div class="row-fluid" id="codeContext">
+                            <code>
+                                        local x = 1
+                                        y = x + 1
+                                    </code>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row-fluid">
+                            <div class="comment-tools">
+                                <a href="#">
+                                    <span class="fas fa-reply" title="Reply"></span>
+                                </a>
+                                <a href="#">
+                                    <span class="fas fa-comments" title="Comments">3</span>
+                                </a>
+                                <a href="#">
+                                    <span class="icon fas fa-edit" title="Edit"></span>
+                                </a>
+                                <a href="#" style="float: right;">
+                                    <span class="icon fas fa-trash" title="Delete"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

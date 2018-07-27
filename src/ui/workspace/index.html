@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-ae362vOLHy2F1EfJtpMbNW0i9pNM1TP2l5O4VGYYiLJKsaejqVWibbP6BSf0UU5i"
+        crossorigin="anonymous">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src *; style-src 'self'; script-src 'nonce-gitlens'"/> -->
+</head>
+
+<body class="preload">
+    <div class="container">
+        <div class="content">
+            <div class="page-header page-header--sticky">
+                <div class="page-header__row">
+                    <h2 class="page-header__title">[User Name]</h2>
+                </div>
+                <div class="page-header__row">
+                    <div class="page-header__title-actions">
+                        <a href="#" data-action="collapse" title="Collapse all issues">collapse all</a>
+                        <a href="#" data-action="expand" class="hidden" title="Expand all issues">expand all</a>
+                    </div>
+                    <div class="page-header__toolbar">
+                        <div class="issues-sync">
+                            <button id="issues.sync" type="button" class="btn btn-primary" name="issues.sync">Sync</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-groups">
+                <div class="section-group__content">
+                    <section id="issue-id-generated-random" class="issue-item">
+                        <div class="issue-content">
+                            <div class="issue-header">
+                                <div class="chat-element">
+                                    <a href="#" class="float-left">
+                                        <img alt="image" class="rounded-circle" src="img/a2.jpg">
+                                    </a>
+                                    <div class="media-body ">
+                                        <small class="float-right text-navy">1m ago</small>
+                                        <strong>Mike Smith</strong>
+                                        <p class="m-b-xs">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                                        </p>
+                                        <small class="text-muted">Today 4:21 pm - 12.06.2014</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="chat-activity-list">
+
+                                    <div class="chat-element">
+                                        <a href="#" class="float-left">
+                                            <img alt="image" class="rounded-circle" src="img/a2.jpg">
+                                        </a>
+                                        <div class="media-body ">
+                                            <small class="float-right text-navy">1m ago</small>
+                                            <strong>Mike Smith</strong>
+                                            <p class="m-b-xs">
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                                            </p>
+                                            <small class="text-muted">Today 4:21 pm - 12.06.2014</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="chat-element right">
+                                        <a href="#" class="float-right">
+                                            <img alt="image" class="rounded-circle" src="img/a4.jpg">
+                                        </a>
+                                        <div class="media-body text-right">
+                                            <small class="float-left">5m ago</small>
+                                            <strong>John Smith</strong>
+                                            <p class="m-b-xs">
+                                                Lorem Ipsum is simply dummy text of the printing.
+                                            </p>
+                                            <small class="text-muted">Today 4:21 pm - 12.06.2014</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="chat-element">
+                                        <a href="#" class="float-left">
+                                            <img alt="image" class="rounded-circle" src="img/a2.jpg">
+                                        </a>
+                                        <div class="media-body">
+                                            <small class="float-right">2h ago</small>
+                                            <strong>Mike Smith</strong>
+                                            <p class="m-b-xs">
+                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                                            </p>
+                                            <small class="text-muted">Today 4:21 pm - 12.06.2014</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-form">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="Message"></textarea>
+                                    </div>
+                                    <div class="text-right">
+                                        <button type="submit" class="btn btn-sm btn-primary m-t-n-xs">
+                                            <strong>Send Message</strong>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.bootstrap = '{{bootstrap}}';
+    </script>
+</body>
+
+</html>
